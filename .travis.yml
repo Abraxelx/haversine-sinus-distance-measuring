@@ -6,4 +6,4 @@ install:
   - pip3 install -r requirements.txt
 
 script:
-  -python ReadExcel.py
+  - python ReadExcel.py
