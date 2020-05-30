@@ -1,4 +1,7 @@
-# haversine-sinus-distance-measuring
+# Haversine Sinus Distance Measuring
+
+[![Build Status](https://travis-ci.org/Abraxelx/haversine-sinus-distance-measuring.svg?branch=master)](https://travis-ci.org/Abraxelx/haversine-sinus-distance-measuring)
+
 Calculating Geographic Distances Through Haversine Approach
 
 The haversine formula determines the great-circle distance between two points on a sphere given their longitudes and latitudes. Important in navigation, it is a special case of a more general formula in spherical trigonometry, the law of haversines, that relates the sides and angles of spherical triangles.
