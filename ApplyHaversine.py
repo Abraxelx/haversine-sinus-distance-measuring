@@ -34,6 +34,4 @@ with open('sequence.csv', 'w', newline='') as f:
             istanbul = (df['Latitude (N)'].values[i+1], df['Longitude (E)'].values[i+1])
             thewriter.writerow({'start' : i, 'end' : i+1, 'value' : haversine(paris,istanbul, unit=Unit.KILOMETERS)})
         else:
-            paris =(df['Latitude (N)'].values[i], df['Longitude (E)'].values[i])
-            istanbul = (df['Latitude (N)'].values[0], df['Longitude (E)'].values[0])
-            thewriter.writerow({'start' : i, 'end' : 0, 'value' : haversine(paris,istanbul, unit=Unit.KILOMETERS)})
+            print("Sequence File Created")
