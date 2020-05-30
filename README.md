@@ -1,6 +1,6 @@
 # Haversine Sinus Distance Measuring
 
-[![Build Status](https://travis-ci.org/Abraxelx/haversine-sinus-distance-measuring.svg?branch=master)](https://travis-ci.org/Abraxelx/haversine-sinus-distance-measuring)
+!https://travis-ci.org/Abraxelx/haversine-sinus-distance-measuring.svg?branch=master!:https://travis-ci.org/Abraxelx/haversine-sinus-distance-measuring
 
 Calculating Geographic Distances Through Haversine Approach
 
