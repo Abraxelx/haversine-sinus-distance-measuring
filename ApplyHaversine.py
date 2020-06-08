@@ -20,33 +20,33 @@ longColumnName =  'Longitude (E)'
 length = df.shape[0]
 
 with open('subset.csv', 'w', newline='') as f:
-    fieldnames =['start','end','Lat1','Long1','Lat2','Long2','value']
+    fieldnames =['node','destination','Lat1','Long1','Lat2','Long2','value']
     thewriter = csv.DictWriter(f, fieldnames=fieldnames)
     thewriter.writeheader()
     for i in range(length):
         for j in range(length):
             lat1 = df[latColumnName].values[i]
-            long1 = df[longColumnName].values[i]
+            long1= df[longColumnName].values[i]
             lat2=  df[latColumnName].values[j]
             long2= df[longColumnName].values[j]
-            location_1 =(lat1,long1 )
-            location_2 = (lat2, long2 )
-            thewriter.writerow({'start' : i, 'end' : j, 'Lat1' : lat1, 'Long1' : long1, 'Lat2' : lat2, 'Long2' : long2, 'value' : haversine(location_1,location_2, unit=Unit.KILOMETERS)})
+            location_1 =(lat1,long1)
+            location_2 = (lat2, long2)
+            thewriter.writerow({'node' : i, 'destination' : j, 'Lat1' : format(lat1,'.4f'), 'Long1' : format(long1,'.4f'), 'Lat2' : format(lat2,'.4f'), 'Long2' : format(long2,'.4f'), 'value' : haversine(location_1,location_2, unit=Unit.KILOMETERS)})
 
 
 with open('sequence.csv', 'w', newline='') as f:
-    fieldnames =['start','end','Lat1','Long1','Lat2','Long2','value']
+    fieldnames =['node','destination','Lat1','Long1','Lat2','Long2','value']
     thewriter = csv.DictWriter(f, fieldnames=fieldnames)
     thewriter.writeheader()
     for i in range(length):
 
         if not i == (length-1):
-            lat1= df[latColumnName].values[i]
-            long1= df[longColumnName].values[i]
-            lat2= df[latColumnName].values[i+1]
-            long2= df[longColumnName].values[i+1]
+            lat1= float(df[latColumnName].values[i])
+            long1= float(df[longColumnName].values[i])
+            lat2= float(df[latColumnName].values[i+1])
+            long2= float(df[longColumnName].values[i+1])
             location_1 =(lat1,long1)
             location_2 = (lat2, long2)
-            thewriter.writerow({'start' : i, 'end' : i+1, 'Lat1' : lat1, 'Long1' : long1, 'Lat2' : lat2, 'Long2' : long2, 'value' : haversine(location_1,location_2, unit=Unit.KILOMETERS)})
+            thewriter.writerow({'node' : i, 'destination' : i+1, 'Lat1' : format(lat1,'.4f'), 'Long1' : format(long1,'.4f'), 'Lat2' : format(lat2,'.4f'), 'Long2' : format(long2,'.4f'), 'value' : haversine(location_1,location_2, unit=Unit.KILOMETERS)})
         else:
             print("Sequence File Created")
